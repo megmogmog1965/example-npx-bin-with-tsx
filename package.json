@@ -1,0 +1,39 @@
+{
+  "name": "example-npx-bin-with-tsx",
+  "version": "1.0.0",
+  "description": "Example project how to specify TypeScript code in the \"bin\" field of package.json for npx execution.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/megmogmog1965/example-npx-bin-with-tsx.git"
+  },
+  "type": "module",
+  "main": "./src/index.js",
+  "bin": {
+    "npx_bin_with_tsx": "src/index.ts"
+  },
+  "scripts": {
+    "dev": "npm run build && tsx src/index.ts",
+    "build": "npm run lint && npm run tsc",
+    "lint": "eslint",
+    "tsc": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "author": "megmogmog1965",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/node": "^22.5.2",
+    "eslint": "^9.9.1",
+    "globals": "^15.11.0",
+    "tsx": "^4.19.1",
+    "typescript-eslint": "^8.3.0",
+    "vitest": "^2.0.5"
+  },
+  "volta": {
+    "node": "18.20.4"
+  }
+}
